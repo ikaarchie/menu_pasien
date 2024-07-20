@@ -27,7 +27,7 @@ class MenuPasienController extends Controller
      */
     public function getData()
     {
-        $menu_pasiens = MenuPasien::latest('id')->paginate(1000);
+        $menu_pasiens = MenuPasien::latest('created_at')->paginate(1000);
 
         return view('show')->with('menu_pasiens', $menu_pasiens);
     }
